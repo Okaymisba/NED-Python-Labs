@@ -2,7 +2,7 @@ import psycopg2
 from tkinter import *
 from tkinter import messagebox
 
-# Database connection setup
+
 def connect_db():
     try:
         conn = psycopg2.connect(
@@ -17,7 +17,7 @@ def connect_db():
         messagebox.showerror("Database Error", f"Error connecting to the database: {e}")
         return None
 
-# Insert operation
+
 def insert_record():
     conn = connect_db()
     if conn:
@@ -33,7 +33,7 @@ def insert_record():
         finally:
             conn.close()
 
-# Delete operation
+
 def delete_record():
     conn = connect_db()
     if conn:
@@ -52,11 +52,10 @@ def delete_record():
         finally:
             conn.close()
 
-# GUI Setup
+
 root = Tk()
 root.title("Teacher Table Operations")
 
-# Insert Section
 insert_frame = LabelFrame(root, text="Insert Record", padx=10, pady=10)
 insert_frame.pack(padx=10, pady=10)
 
@@ -79,7 +78,6 @@ deptid_entry.grid(row=3, column=1, padx=5, pady=5)
 insert_btn = Button(insert_frame, text="Insert Record", command=insert_record)
 insert_btn.grid(row=4, column=0, columnspan=2, pady=10)
 
-# Delete Section
 delete_frame = LabelFrame(root, text="Delete Record", padx=10, pady=10)
 delete_frame.pack(padx=10, pady=10)
 
@@ -90,5 +88,4 @@ tid_entry.grid(row=0, column=1, padx=5, pady=5)
 delete_btn = Button(delete_frame, text="Delete Record", command=delete_record)
 delete_btn.grid(row=1, column=0, columnspan=2, pady=10)
 
-# Mainloop
 root.mainloop()

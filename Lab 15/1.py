@@ -3,7 +3,6 @@ from tkinter import *
 from tkinter import ttk
 
 
-# Database connection setup
 def connect_db():
     try:
         conn = psycopg2.connect(
@@ -18,7 +17,6 @@ def connect_db():
         print("Error connecting to the database:", e)
 
 
-# Fetch data from the database
 def fetch_data(query):
     conn = connect_db()
     cursor = conn.cursor()
@@ -28,7 +26,6 @@ def fetch_data(query):
     return rows
 
 
-# Display data in GUI
 def display_data():
     for row in tree.get_children():
         tree.delete(row)
@@ -37,11 +34,9 @@ def display_data():
         tree.insert("", "end", values=row)
 
 
-# GUI Design
 root = Tk()
 root.title("University Database App")
 
-# Table Display
 frame = Frame(root)
 frame.pack(pady=20)
 
@@ -52,7 +47,6 @@ for col in columns:
     tree.column(col, width=150)
 tree.pack()
 
-# Buttons
 btn_frame = Frame(root)
 btn_frame.pack(pady=10)
 
