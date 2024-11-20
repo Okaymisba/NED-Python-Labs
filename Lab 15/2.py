@@ -7,8 +7,8 @@ def connect_db():
     try:
         conn = psycopg2.connect(
             dbname="university",
-            user="postgres",  # Replace with your username
-            password="12345",  # Replace with your password
+            user="postgres",
+            password="12345",
             host="localhost",
             port="5432"
         )
