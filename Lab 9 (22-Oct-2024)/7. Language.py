@@ -8,7 +8,8 @@ english_and_french_only = 17
 spanish_and_french_only = 9
 all_three = 13
 
-accounted_students = only_english + only_spanish + only_french + english_and_spanish_only + english_and_french_only + spanish_and_french_only + all_three
+accounted_students = (only_english + only_spanish + only_french + english_and_spanish_only
+                      + english_and_french_only + spanish_and_french_only + all_three)
 
 speak_none = total_students - accounted_students
 
